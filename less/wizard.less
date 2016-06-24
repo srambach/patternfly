@@ -1,0 +1,330 @@
+//
+// Wizard
+// --------------------------------------------------
+
+// Wizard header
+// Top section of the wizard w/ title and dismiss
+
+// variables
+@wz-default-bg-color: @color-pf-white;
+@wz-default-color: @color-pf-black-400;
+@wz-default-border-color: @color-pf-black-400;
+
+@wz-current-bg-color: @color-pf-blue-300;
+@wz-current-color: @color-pf-white;
+@wz-current-border-color: @color-pf-blue-300;
+
+@wz-footer-border-color: @color-pf-black-300;
+
+@wz-hover-bg-color: @color-pf-black-400;
+@wz-hover-color: @color-pf-white;
+@wz-hover-border-color: @color-pf-black-400;
+
+@wz-pf-steps-label-font-size: ceil((@font-size-base * 1.3333));
+@wz-pf-steps-number-font-size: @font-size-base;
+
+@wz-sidebar-bg-color: @color-pf-black-100;
+@wz-sidebar-bg-color-current: @color-pf-blue-200;
+@wz-sidebar-border-color: @color-pf-black-300;
+@wz-sidebar-color-current: @color-pf-blue-300;
+@wz-sidebar-item-color: @color-pf-black;
+@wz-sidebar-item-border-color: @color-pf-black-200;
+@wz-sidebar-item-bg-color-active: @color-pf-black-200;
+@wz-sidebar-item-highlight-active: @color-pf-blue-300;
+@wz-sidebar-item-highlight-hover: @color-pf-blue-300;
+
+@wz-substep-nav-width: 250px;
+
+@wz-viewed-bg-color: @color-pf-white;
+@wz-viewed-color: @color-pf-black;
+@wz-viewed-border-color: @color-pf-blue-300;
+
+.wizard-pf-body {
+    padding: 0;
+}
+
+/* styles the sidebard containing the sub-steps */
+.wizard-pf-sidebar {
+  background: @wz-sidebar-bg-color;
+  border-right: 1px solid @wz-sidebar-border-color;
+  bottom: 0;
+  display: table-cell;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+  top: 0;
+  vertical-align: top;
+  width: @wz-substep-nav-width;
+
+  .list-group {
+    border-top: 0;
+    margin-bottom: 0;
+    > .list-group-item {
+      background-color: transparent;
+      border-color: @wz-sidebar-item-border-color;
+      padding: 0;
+
+      > a {
+        color: @wz-sidebar-item-color;
+        cursor: pointer;
+        display: block;
+        font-size: 14px;
+        font-weight: 700;
+        height: 50px;
+        outline: 0;
+        padding-top: 11px;
+        padding-left: 20px;
+        position: relative;
+        white-space: nowrap;
+        width: @wz-substep-nav-width;
+
+        .wizard-pf-substep-number {
+          display:inline-block;
+          margin-right: 5px;
+          vertical-align: middle;
+          width: 25px;
+        }
+        .wizard-pf-substep-title {
+          display:inline-block;
+          margin-right: 5px;
+          text-align: left;
+          vertical-align: middle;
+        }
+        &:hover {
+          text-decoration: none;
+        }
+      }
+      &.active {
+        background-color: @wz-sidebar-item-bg-color-active;
+        > a {
+          color: #199dde;
+          cursor: default;
+        }
+        // line to left side showing active substep
+        > a:before {
+          background: @wz-sidebar-item-highlight-active;
+          content: " ";
+          height: 100%;
+          left: 0;
+          position: absolute;
+          top: 0;
+          width: 3px;
+        }
+        // caret to right showing active substep
+        > a:after {
+          color: @wz-sidebar-item-highlight-active;
+          content: "\f105"; // right caret
+          display: block;
+          font-family: FontAwesome;
+          font-size: 24px;
+          font-weight: 500;
+          line-height: 30px;
+          padding-top: 10px;
+          position: absolute;
+          right: 23px;
+          top: 0;
+        }
+      }
+    }
+  }
+}
+
+/* styles the steps indicator across the top of the wizard */
+.wizard-pf-steps {
+  border-bottom: solid 1px #d1d1d1;
+  text-align:center;
+}
+.wizard-pf-steps-indicator {
+  font-size: @wz-pf-steps-label-font-size;
+  display:inline-block;
+  display: -ms-flexbox; /* for IE 10 */
+  display:flex;
+  height: 120px;
+  justify-content: space-around;
+  list-style: none;
+  padding: 38px 0 0 0;
+
+  li {
+    counter-increment: section;
+    float:left; /* float for IE9 since it doesn't support flex. If items wrap, they overlap */
+    -ms-flex: 1; /* for IE 10 */
+    flex-grow: 1;
+    flex-basis: 0;
+    line-height: 15px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    /* draw the line between the circles */
+    &:before {
+      background-color: @wz-default-border-color;
+      content: '';
+      height: 2px;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 40px; // needed for IE9/10 calculate 50% of just the li, others calc 50% of the entire thing including the a:before
+      //otherwise, use top: calc(50% - 1px);
+    }
+    /* don't draw the line between the circles on the ends */
+    &:first-child:before {
+      left: 50%;
+      right: 0;
+    }
+    &:last-child:before {
+      left: 0;
+      right: 50%;
+    }
+    &:only-of-type:before {
+      background-color: transparent;
+    }
+
+    a {
+      color: @color-pf-black;
+      font-size: 16px;
+      cursor: pointer;
+      margin-left:1em;
+      margin-right:1em;
+      text-decoration: none;
+      transition: 0.25s;
+
+      /* draw the step number in the circle */
+      &:before {
+        background-color: @wz-default-bg-color;
+        border-radius: 100%;
+        border: solid 2px @wz-default-border-color;
+        color: @wz-default-color;
+        content: counter(section);
+        font-size: @wz-pf-steps-number-font-size;
+        font-weight: 700;
+        height: 25px;
+        left: calc(50% - 13px);
+        line-height: 22px;
+        position: absolute;
+        top: 27px;
+        transition: 0.25s;
+        width: 25px;
+      }
+
+      &:hover {
+        &:before {
+          background-color: @wz-hover-bg-color;
+          border-color: @wz-hover-border-color;
+          color: @wz-hover-color;
+        }
+      }
+    }
+  }
+  li.current a {
+    cursor: default;
+    &:before {
+      background-color: @wz-current-bg-color;
+      border-color: @wz-current-border-color;
+      color: @wz-current-color;
+    }
+    &:hover {
+      &:before {
+        background-color: @wz-hover-bg-color;
+        border-color: @wz-hover-border-color;
+        color: @wz-hover-color;
+      }
+    }
+  }
+
+  li.viewed a {
+    &:before {
+      background-color: @wz-viewed-bg-color;
+      border-color: @wz-viewed-border-color;
+      color: @wz-viewed-color;
+    }
+    &:hover {
+      &:before {
+        background-color: @wz-hover-bg-color;
+        border-color: @wz-hover-border-color;
+        color: @wz-hover-color;
+      }
+    }
+  }
+}
+
+/* styles the main content portion of the wizard */
+.wizard-pf-main {
+  display: table-cell;
+  padding: 2em; //TODO: Need number from designer?
+  vertical-align: top;
+  width: 10000px;
+  .blank-slate-pf {
+    background-color: transparent;
+    border: none;
+    left: 0;
+    right: 0;
+  }
+}
+
+/* styles the content of a review page */
+.wizard-pf-review-page {
+  .list-group, .list-group-item {
+    border: none;
+    margin-bottom: 0;
+  }
+  ul {
+    margin-left: 24px;
+  }
+}
+.wizard-pf-review-step {
+  color: #030303;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 20px;
+  text-decoration: none;
+  transition: 0.25s;
+  a {
+    color:@color-pf-black;
+    text-decoration:none;
+  }
+  &:before {
+    content: "\f107"; //down caret
+    display: inline-block;
+    font-family: FontAwesome;
+    font-size: 24px;
+    font-weight: 500;
+    margin-right:10px;
+    vertical-align:middle;
+  }
+  &.collapsed {
+    &:before {
+      content: "\f105"; //right caret
+    }
+  }
+}
+
+.wizard-pf-review-substep {
+  color: @color-pf-black;
+  cursor: pointer;
+  font-size: 12px;
+  margin-left: 24px;
+  text-decoration: none;
+  transition: 0.25s;
+  a {
+    color:@color-pf-black;
+    text-decoration:none;
+  }
+}
+
+.wizard-pf-success-icon {
+  color: @color-pf-green-400;
+  font-size: (@font-size-base * 5.6);
+  line-height: (@font-size-base * 5.6);
+}
+
+/* styles the footer */
+.wizard-pf-footer {
+  border-top: 1px solid @wz-footer-border-color;
+  margin-top: 0;
+  padding-bottom: 17px;
+
+  .btn-cancel {
+    margin-right:25px;
+  }
+}
