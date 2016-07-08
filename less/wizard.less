@@ -6,47 +6,22 @@
 // Top section of the wizard w/ title and dismiss
 
 // variables
-@wz-default-bg-color: @color-pf-white;
-@wz-default-color: @color-pf-black-400;
-@wz-default-border-color: @color-pf-black-400;
-
-@wz-current-bg-color: @color-pf-blue-300;
-@wz-current-color: @color-pf-white;
-@wz-current-border-color: @color-pf-blue-300;
-
-@wz-footer-border-color: @color-pf-black-300;
-
 @wz-hover-bg-color: @color-pf-black-400;
 @wz-hover-color: @color-pf-white;
 @wz-hover-border-color: @color-pf-black-400;
 
-@wz-pf-steps-label-font-size: ceil((@font-size-base * 1.3333));
-@wz-pf-steps-number-font-size: @font-size-base;
-
-@wz-sidebar-bg-color: @color-pf-black-100;
-@wz-sidebar-bg-color-current: @color-pf-blue-200;
-@wz-sidebar-border-color: @color-pf-black-300;
-@wz-sidebar-color-current: @color-pf-blue-300;
-@wz-sidebar-item-color: @color-pf-black;
-@wz-sidebar-item-border-color: @color-pf-black-200;
-@wz-sidebar-item-bg-color-active: @color-pf-black-200;
 @wz-sidebar-item-highlight-active: @color-pf-blue-300;
-@wz-sidebar-item-highlight-hover: @color-pf-blue-300;
 
 @wz-substep-nav-width: 250px;
 
-@wz-viewed-bg-color: @color-pf-white;
-@wz-viewed-color: @color-pf-black;
-@wz-viewed-border-color: @color-pf-blue-300;
 
 .wizard-pf-body {
     padding: 0;
 }
-
 /* styles the sidebard containing the sub-steps */
 .wizard-pf-sidebar {
-  background: @wz-sidebar-bg-color;
-  border-right: 1px solid @wz-sidebar-border-color;
+  background: @color-pf-black-100;
+  border-right: 1px solid @color-pf-black-300;
   bottom: 0;
   display: table-cell;
   left: 0;
@@ -62,11 +37,11 @@
     margin-bottom: 0;
     > .list-group-item {
       background-color: transparent;
-      border-color: @wz-sidebar-item-border-color;
+      border-color: @color-pf-black-200;
       padding: 0;
 
       > a {
-        color: @wz-sidebar-item-color;
+        color: @color-pf-black;
         cursor: pointer;
         display: block;
         font-size: 14px;
@@ -96,9 +71,9 @@
         }
       }
       &.active {
-        background-color: @wz-sidebar-item-bg-color-active;
+        background-color: @color-pf-black-200;
         > a {
-          color: #199dde;
+          color: @wz-sidebar-item-highlight-active;
           cursor: default;
         }
         // line to left side showing active substep
@@ -132,11 +107,11 @@
 
 /* styles the steps indicator across the top of the wizard */
 .wizard-pf-steps {
-  border-bottom: solid 1px #d1d1d1;
+  border-bottom: solid 1px @color-pf-black-300;
   text-align:center;
 }
 .wizard-pf-steps-indicator {
-  font-size: @wz-pf-steps-label-font-size;
+  font-size: ceil((@font-size-base * 1.3333));
   display:inline-block;
   display: -ms-flexbox; /* for IE 10 */
   display:flex;
@@ -158,7 +133,7 @@
     text-align: center;
     /* draw the line between the circles */
     &:before {
-      background-color: @wz-default-border-color;
+      background-color: @color-pf-black-400;
       content: '';
       height: 2px;
       left: 0;
@@ -191,12 +166,12 @@
 
       /* draw the step number in the circle */
       &:before {
-        background-color: @wz-default-bg-color;
+        background-color: @color-pf-white;
         border-radius: 100%;
-        border: solid 2px @wz-default-border-color;
-        color: @wz-default-color;
+        border: solid 2px @color-pf-black-400;
+        color: @color-pf-black-400;
         content: counter(section);
-        font-size: @wz-pf-steps-number-font-size;
+        font-size: @font-size-base;
         font-weight: 700;
         height: 25px;
         left: calc(50% - 13px);
@@ -219,9 +194,9 @@
   li.current a {
     cursor: default;
     &:before {
-      background-color: @wz-current-bg-color;
-      border-color: @wz-current-border-color;
-      color: @wz-current-color;
+      background-color: @color-pf-blue-300;
+      border-color: @color-pf-blue-300;
+      color: @color-pf-white;
     }
     &:hover {
       &:before {
@@ -234,9 +209,9 @@
 
   li.viewed a {
     &:before {
-      background-color: @wz-viewed-bg-color;
-      border-color: @wz-viewed-border-color;
-      color: @wz-viewed-color;
+      background-color: @color-pf-white;
+      border-color: @color-pf-blue-300;
+      color: @color-pf-black;
     }
     &:hover {
       &:before {
@@ -273,7 +248,7 @@
   }
 }
 .wizard-pf-review-step {
-  color: #030303;
+  color: @color-pf-black;
   cursor: pointer;
   font-size: 16px;
   margin-left: 20px;
@@ -320,7 +295,7 @@
 
 /* styles the footer */
 .wizard-pf-footer {
-  border-top: 1px solid @wz-footer-border-color;
+  border-top: 1px solid @color-pf-black-300;
   margin-top: 0;
   padding-bottom: 17px;
 
