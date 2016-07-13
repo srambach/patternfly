@@ -224,7 +224,7 @@
 /* styles the main content portion of the wizard */
 .wizard-pf-main {
   display: table-cell;
-  padding: 2em; //TODO: Need number from designer?
+  padding: 3em;
   vertical-align: top;
   width: 10000px;
   .blank-slate-pf {
@@ -237,49 +237,21 @@
 
 /* styles the content of a review page */
 .wizard-pf-review-page {
-  .list-group, .list-group-item {
-    border: none;
-    margin-bottom: 0;
-  }
-  ul {
-    margin-left: 24px;
-  }
-}
-.wizard-pf-review-step {
-  color: @color-pf-black;
-  cursor: pointer;
-  font-size: 16px;
-  margin-left: 20px;
-  text-decoration: none;
-  a {
-    color:@color-pf-black;
-    text-decoration:none;
-  }
-  &:before {
-    content: "\f107"; //down caret
-    display: inline-block;
-    font-family: FontAwesome;
-    font-size: 24px;
-    font-weight: 500;
-    margin-right:10px;
-    vertical-align:middle;
-  }
-  &.collapsed {
-    &:before {
-      content: "\f105"; //right caret
+  .treeview .list-group-item {
+    color: @color-pf-black;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 20px;
+    padding: .5em .5em;
+    text-decoration: none;
+    a {
+      color: @color-pf-black;
+      text-decoration: none;
     }
   }
-}
-
-.wizard-pf-review-substep {
-  color: @color-pf-black;
-  cursor: pointer;
-  font-size: 12px;
-  margin-left: 24px;
-  text-decoration: none;
-  a {
-    color:@color-pf-black;
-    text-decoration:none;
+  .treeview span.icon {
+    font-size: 24px;
+    font-weight: 500;
   }
 }
 

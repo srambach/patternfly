@@ -213,46 +213,43 @@ resource: true
           <div class="wizard-pf-main">
             <div>
               <div class="wizard-pf-review-page">
-                  <ul class="list-group wizard-pf-review">
-                    <li class="list-group-item wizard-pf-review-step collapsed">
-                      <a>
-                        First Step
-                      </a>
-                      <ul class="list-group wizard-pf-review-substeps hidden">
-                        <li class="list-group-item wizard-pf-review-substep">
-                          <a class="" >
-                            <span class="wizard-pf-substep-number">1A:</span>
-                            <span class="wizard-pf-substep-title">Details listed here</span>
-                          </a>
-                        </li>
-                        <li class="list-group-item wizard-pf-review-substep collapsed">
-                          <a class=" " >
-                            <span class="wizard-pf-substep-number">1B:</span>
-                            <span class="wizard-pf-substep-title">Progress listed here</span>
-                          </a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="list-group-item wizard-pf-review-step">
-                      <a>
-                        Second Step
-                      </a>
-                      <ul class="list-group wizard-pf-review-substeps">
-                        <li class="list-group-item wizard-pf-review-substep">
-                          <a class="" >
-                            <span class="wizard-pf-substep-number">2A:</span>
-                            <span class="wizard-pf-substep-title">Details listed here</span>
-                          </a>
-                        </li>
-                        <li class="list-group-item wizard-pf-review-substep collapsed">
-                          <a class=" " >
-                            <span class="wizard-pf-substep-number">2B:</span>
-                            <span class="wizard-pf-substep-title">Progress listed here</span>
-                          </a>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
+                <div id="treeview1"></div>
+                <script>
+                  $(function() {
+                    var defaultData = [
+                      {
+                        text: 'First Step',
+                        state: {
+                          expanded: false
+                        },
+                        nodes: [
+                          {
+                            text: '1A: Details listed here'
+                          },
+                          {
+                            text: '1B: Progress listed here'}
+                        ]
+                      },
+                      {
+                        text: 'Second Step',
+                        nodes: [
+                          {
+                            text: '2A: Details listed here'
+                          },
+                          {
+                            text: '2B: Progress listed here'}
+                        ]
+                      }
+                    ];
+                    $('#treeview1').treeview({
+                      collapseIcon: "fa fa-angle-down",
+                      data: defaultData,
+                      expandIcon: "fa fa-angle-right",
+                      showBorder: false
+                    });
+                  });
+                </script>
+
               </div>
             </div>
           </div><!-- /.wizard-pf-main -->
@@ -446,3 +443,6 @@ resource: true
     display: block;
   }
 </style>
+
+<script src="/components/bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
+

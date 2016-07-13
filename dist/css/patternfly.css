@@ -10353,7 +10353,7 @@ h2,
 /* styles the main content portion of the wizard */
 .wizard-pf-main {
   display: table-cell;
-  padding: 2em;
+  padding: 3em;
   vertical-align: top;
   width: 10000px;
 }
@@ -10364,47 +10364,24 @@ h2,
   right: 0;
 }
 /* styles the content of a review page */
-.wizard-pf-review-page .list-group,
-.wizard-pf-review-page .list-group-item {
-  border: none;
-  margin-bottom: 0;
-}
-.wizard-pf-review-page ul {
-  margin-left: 24px;
-}
-.wizard-pf-review-step {
+.wizard-pf-review-page .treeview .list-group-item {
   color: #030303;
   cursor: pointer;
   font-size: 16px;
   margin-left: 20px;
+  padding: .5em .5em;
   text-decoration: none;
 }
-.wizard-pf-review-step a {
+.wizard-pf-review-page .treeview .list-group-item a {
   color: #030303;
   text-decoration: none;
 }
-.wizard-pf-review-step:before {
-  content: "\f107";
-  display: inline-block;
-  font-family: FontAwesome;
+.wizard-pf-review-page .treeview .list-group-item > .list-group-item {
+  font-size: 12px;
+}
+.wizard-pf-review-page .treeview span.icon {
   font-size: 24px;
   font-weight: 500;
-  margin-right: 10px;
-  vertical-align: middle;
-}
-.wizard-pf-review-step.collapsed:before {
-  content: "\f105";
-}
-.wizard-pf-review-substep {
-  color: #030303;
-  cursor: pointer;
-  font-size: 12px;
-  margin-left: 24px;
-  text-decoration: none;
-}
-.wizard-pf-review-substep a {
-  color: #030303;
-  text-decoration: none;
 }
 .wizard-pf-success-icon {
   color: #3f9c35;
