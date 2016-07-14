@@ -10376,9 +10376,6 @@ h2,
   color: #030303;
   text-decoration: none;
 }
-.wizard-pf-review-page .treeview .list-group-item > .list-group-item {
-  font-size: 12px;
-}
 .wizard-pf-review-page .treeview span.icon {
   font-size: 24px;
   font-weight: 500;
