@@ -5,16 +5,6 @@
 // Wizard header
 // Top section of the wizard w/ title and dismiss
 
-// variables
-@wz-hover-bg-color: @color-pf-black-400;
-@wz-hover-color: @color-pf-white;
-@wz-hover-border-color: @color-pf-black-400;
-
-@wz-sidebar-item-highlight-active: @color-pf-blue-300;
-
-@wz-substep-nav-width: 250px;
-
-
 .wizard-pf-body {
     padding: 0;
 }
@@ -30,12 +20,12 @@
   position: relative;
   top: 0;
   vertical-align: top;
-  width: @wz-substep-nav-width;
 
   .list-group {
     border-top: 0;
     margin-bottom: 0;
-    > .list-group-item {
+  }
+    .list-group-item {
       background-color: transparent;
       border-color: @color-pf-black-200;
       padding: 0;
@@ -52,33 +42,28 @@
         padding-left: 20px;
         position: relative;
         white-space: nowrap;
-        width: @wz-substep-nav-width;
+        width: 18em;
 
-        .wizard-pf-substep-number {
-          display:inline-block;
-          margin-right: 5px;
-          vertical-align: middle;
-          width: 25px;
-        }
-        .wizard-pf-substep-title {
-          display:inline-block;
-          margin-right: 5px;
-          text-align: left;
-          vertical-align: middle;
-        }
+
         &:hover {
           text-decoration: none;
         }
       }
+
       &.active {
         background-color: @color-pf-black-200;
+
+        //override default behavior
+        &:hover {
+          border-color: @color-pf-black-200;
+        }
         > a {
-          color: @wz-sidebar-item-highlight-active;
+          color: @color-pf-blue-300;
           cursor: default;
         }
         // line to left side showing active substep
         > a:before {
-          background: @wz-sidebar-item-highlight-active;
+          background: @color-pf-blue-300;
           content: " ";
           height: 100%;
           left: 0;
@@ -88,7 +73,7 @@
         }
         // caret to right showing active substep
         > a:after {
-          color: @wz-sidebar-item-highlight-active;
+          color: @color-pf-blue-300;
           content: "\f105"; // right caret
           display: block;
           font-family: FontAwesome;
@@ -102,9 +87,19 @@
         }
       }
     }
-  }
 }
-
+.wizard-pf-substep-number {
+  display:inline-block;
+  margin-right: 5px;
+  vertical-align: middle;
+  width: 25px;
+}
+.wizard-pf-substep-title {
+  display:inline-block;
+  margin-right: 5px;
+  text-align: left;
+  vertical-align: middle;
+}
 /* styles the steps indicator across the top of the wizard */
 .wizard-pf-steps {
   border-bottom: solid 1px @color-pf-black-300;
@@ -182,14 +177,14 @@
 
       &:hover {
         &:before {
-          background-color: @wz-hover-bg-color;
-          border-color: @wz-hover-border-color;
-          color: @wz-hover-color;
+          background-color: @color-pf-black-400;
+          border-color: @color-pf-black-400;
+          color: @color-pf-white;
         }
       }
     }
   }
-  .current a {
+  .active a {
     cursor: default;
     &:before {
       background-color: @color-pf-blue-300;
@@ -198,14 +193,14 @@
     }
     &:hover {
       &:before {
-        background-color: @wz-hover-bg-color;
-        border-color: @wz-hover-border-color;
-        color: @wz-hover-color;
+        background-color: @color-pf-black-400;
+        border-color: @color-pf-black-400;
+        color: @color-pf-white;
       }
     }
   }
 
-  .viewed a {
+  .viewed-pf a {
     &:before {
       background-color: @color-pf-white;
       border-color: @color-pf-blue-300;
@@ -213,9 +208,9 @@
     }
     &:hover {
       &:before {
-        background-color: @wz-hover-bg-color;
-        border-color: @wz-hover-border-color;
-        color: @wz-hover-color;
+        background-color: @color-pf-black-400;
+        border-color: @color-pf-black-400;
+        color: @color-pf-white;
       }
     }
   }

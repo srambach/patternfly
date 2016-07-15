@@ -10177,18 +10177,17 @@ h2,
   position: relative;
   top: 0;
   vertical-align: top;
-  width: 250px;
 }
 .wizard-pf-sidebar .list-group {
   border-top: 0;
   margin-bottom: 0;
 }
-.wizard-pf-sidebar .list-group > .list-group-item {
+.wizard-pf-sidebar .list-group-item {
   background-color: transparent;
   border-color: #ededed;
   padding: 0;
 }
-.wizard-pf-sidebar .list-group > .list-group-item > a {
+.wizard-pf-sidebar .list-group-item > a {
   color: #030303;
   cursor: pointer;
   display: block;
@@ -10200,31 +10199,22 @@ h2,
   padding-left: 20px;
   position: relative;
   white-space: nowrap;
-  width: 250px;
+  width: 18em;
 }
-.wizard-pf-sidebar .list-group > .list-group-item > a .wizard-pf-substep-number {
-  display: inline-block;
-  margin-right: 5px;
-  vertical-align: middle;
-  width: 25px;
-}
-.wizard-pf-sidebar .list-group > .list-group-item > a .wizard-pf-substep-title {
-  display: inline-block;
-  margin-right: 5px;
-  text-align: left;
-  vertical-align: middle;
-}
-.wizard-pf-sidebar .list-group > .list-group-item > a:hover {
+.wizard-pf-sidebar .list-group-item > a:hover {
   text-decoration: none;
 }
-.wizard-pf-sidebar .list-group > .list-group-item.active {
+.wizard-pf-sidebar .list-group-item.active {
   background-color: #ededed;
 }
-.wizard-pf-sidebar .list-group > .list-group-item.active > a {
+.wizard-pf-sidebar .list-group-item.active:hover {
+  border-color: #ededed;
+}
+.wizard-pf-sidebar .list-group-item.active > a {
   color: #39a5dc;
   cursor: default;
 }
-.wizard-pf-sidebar .list-group > .list-group-item.active > a:before {
+.wizard-pf-sidebar .list-group-item.active > a:before {
   background: #39a5dc;
   content: " ";
   height: 100%;
@@ -10233,7 +10223,7 @@ h2,
   top: 0;
   width: 3px;
 }
-.wizard-pf-sidebar .list-group > .list-group-item.active > a:after {
+.wizard-pf-sidebar .list-group-item.active > a:after {
   color: #39a5dc;
   content: "\f105";
   display: block;
@@ -10245,6 +10235,18 @@ h2,
   position: absolute;
   right: 23px;
   top: 0;
+}
+.wizard-pf-substep-number {
+  display: inline-block;
+  margin-right: 5px;
+  vertical-align: middle;
+  width: 25px;
+}
+.wizard-pf-substep-title {
+  display: inline-block;
+  margin-right: 5px;
+  text-align: left;
+  vertical-align: middle;
 }
 /* styles the steps indicator across the top of the wizard */
 .wizard-pf-steps {
@@ -10327,25 +10329,25 @@ h2,
   border-color: #bbb;
   color: #fff;
 }
-.wizard-pf-steps-indicator .current a {
+.wizard-pf-steps-indicator .active a {
   cursor: default;
 }
-.wizard-pf-steps-indicator .current a:before {
+.wizard-pf-steps-indicator .active a:before {
   background-color: #39a5dc;
   border-color: #39a5dc;
   color: #fff;
 }
-.wizard-pf-steps-indicator .current a:hover:before {
+.wizard-pf-steps-indicator .active a:hover:before {
   background-color: #bbb;
   border-color: #bbb;
   color: #fff;
 }
-.wizard-pf-steps-indicator .viewed a:before {
+.wizard-pf-steps-indicator .viewed-pf a:before {
   background-color: #fff;
   border-color: #39a5dc;
   color: #030303;
 }
-.wizard-pf-steps-indicator .viewed a:hover:before {
+.wizard-pf-steps-indicator .viewed-pf a:hover:before {
   background-color: #bbb;
   border-color: #bbb;
   color: #fff;
