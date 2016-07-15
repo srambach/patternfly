@@ -157,62 +157,42 @@
       margin-left:1em;
       margin-right:1em;
       text-decoration: none;
-
-      /* draw the step number in the circle */
-      &:before {
-        background-color: @color-pf-white;
-        border-radius: 50%;
-        border: solid 2px @color-pf-black-400;
-        color: @color-pf-black-400;
-        content: counter(section);
-        font-size: @font-size-base;
-        font-weight: 700;
-        height: 25px;
-        left: calc(50% - 13px);
-        line-height: 22px;
-        position: absolute;
-        top: 27px;
-        width: 25px;
-      }
-
       &:hover {
-        &:before {
+        .number-pf {
           background-color: @color-pf-black-400;
           border-color: @color-pf-black-400;
           color: @color-pf-white;
         }
       }
+
     }
   }
-  .active a {
+  /* draw the step number in the circle */
+  .number-pf {
+    background-color: @color-pf-white;
+    border-radius: 50%;
+    border: solid 2px @color-pf-black-400;
+    color: @color-pf-black-400;
+    font-size: @font-size-base;
+    font-weight: 700;
+    height: 25px;
+    left: calc(50% - 13px);
+    line-height: 22px;
+    position: absolute;
+    top: 27px;
+    width: 25px;
+  }
+  .active .number-pf {
     cursor: default;
-    &:before {
       background-color: @color-pf-blue-300;
       border-color: @color-pf-blue-300;
       color: @color-pf-white;
-    }
-    &:hover {
-      &:before {
-        background-color: @color-pf-black-400;
-        border-color: @color-pf-black-400;
-        color: @color-pf-white;
-      }
-    }
   }
 
-  .viewed-pf a {
-    &:before {
+  .viewed-pf .number-pf {
       background-color: @color-pf-white;
       border-color: @color-pf-blue-300;
       color: @color-pf-black;
-    }
-    &:hover {
-      &:before {
-        background-color: @color-pf-black-400;
-        border-color: @color-pf-black-400;
-        color: @color-pf-white;
-      }
-    }
   }
 }
 

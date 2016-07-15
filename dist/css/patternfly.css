@@ -10263,6 +10263,7 @@ h2,
   justify-content: space-around;
   list-style: none;
   padding: 38px 0 0 0;
+  /* draw the step number in the circle */
 }
 .wizard-pf-steps-indicator li {
   counter-increment: section;
@@ -10307,14 +10308,17 @@ h2,
   margin-left: 1em;
   margin-right: 1em;
   text-decoration: none;
-  /* draw the step number in the circle */
 }
-.wizard-pf-steps-indicator li a:before {
+.wizard-pf-steps-indicator li a:hover .number-pf {
+  background-color: #bbb;
+  border-color: #bbb;
+  color: #fff;
+}
+.wizard-pf-steps-indicator .number-pf {
   background-color: #fff;
   border-radius: 50%;
   border: solid 2px #bbb;
   color: #bbb;
-  content: counter(section);
   font-size: 12px;
   font-weight: 700;
   height: 25px;
@@ -10324,33 +10328,16 @@ h2,
   top: 27px;
   width: 25px;
 }
-.wizard-pf-steps-indicator li a:hover:before {
-  background-color: #bbb;
-  border-color: #bbb;
-  color: #fff;
-}
-.wizard-pf-steps-indicator .active a {
+.wizard-pf-steps-indicator .active .number-pf {
   cursor: default;
-}
-.wizard-pf-steps-indicator .active a:before {
   background-color: #39a5dc;
   border-color: #39a5dc;
   color: #fff;
 }
-.wizard-pf-steps-indicator .active a:hover:before {
-  background-color: #bbb;
-  border-color: #bbb;
-  color: #fff;
-}
-.wizard-pf-steps-indicator .viewed-pf a:before {
+.wizard-pf-steps-indicator .viewed-pf .number-pf {
   background-color: #fff;
   border-color: #39a5dc;
   color: #030303;
-}
-.wizard-pf-steps-indicator .viewed-pf a:hover:before {
-  background-color: #bbb;
-  border-color: #bbb;
-  color: #fff;
 }
 /* styles the main content portion of the wizard */
 .wizard-pf-main {
