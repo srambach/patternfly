@@ -1,16 +1,14 @@
-// @debug $page; // check your variable names located in src/patternfly/sass-utilities/component-namespaces.scss
 // stylelint-disable
 $pf-page-v5--breakpoint-map: build-breakpoint-map("base", "sm", "md", "lg", "xl", "2xl");
 $pf-page-v5--height-breakpoint-map: build-breakpoint-map("base", "sm", "md", "lg", "xl", "2xl");
-// stylelint-enable
 
 :root {
-  --#{$page}--BackgroundColor: var(--#{$pf-global}--BackgroundColor--light-300);
-  --#{$page}--inset: var(--#{$pf-global}--spacer--md);
-  --#{$page}--xl--inset: var(--#{$pf-global}--spacer--lg);
+  --#{$page}--BackgroundColor: var(—-pf--global—-background—-color-—secondary);
+  --#{$page}--inset: var(--pf--global--spacer--md);
+  --#{$page}--xl--inset: var(--pf--global--spacer--xl);
 
   // Header
-  --#{$page}__header--BackgroundColor: var(--#{$pf-global}--BackgroundColor--dark-100);
+  --#{$page}__header--BackgroundColor: var(—-pf--global—-background—-color—-secondary);
   --#{$page}__header--ZIndex: var(--#{$pf-global}--ZIndex--md);
   --#{$page}__header--MinHeight: #{pf-size-prem(76px)}; // fixed height for header to ensure consistency across screen sizes.
 
@@ -77,7 +75,7 @@ $pf-page-v5--height-breakpoint-map: build-breakpoint-map("base", "sm", "md", "lg
   // Sidebar
   --#{$page}__sidebar--ZIndex: var(--#{$pf-global}--ZIndex--sm);
   --#{$page}__sidebar--Width: #{pf-size-prem(290px)};
-  --#{$page}__sidebar--BackgroundColor: var(--#{$pf-global}--BackgroundColor--dark-300);
+  --#{$page}__sidebar--BackgroundColor: var(—-pf--global-—background-—color—-secondary);
   --#{$page}__sidebar--m-light--BackgroundColor: var(--#{$pf-global}--BackgroundColor--light-100);
   --#{$page}__sidebar--m-light--BorderRightWidth: var(--#{$pf-global}--BorderWidth--sm);
   --#{$page}__sidebar--m-light--BorderRightColor: var(--#{$pf-global}--BorderColor--100);
@@ -105,15 +103,15 @@ $pf-page-v5--height-breakpoint-map: build-breakpoint-map("base", "sm", "md", "lg
   --#{$page}__main--ZIndex: var(--#{$pf-global}--ZIndex--xs);
 
   // Main section
-  --#{$page}__main-section--PaddingTop: var(--#{$pf-global}--spacer--md);
-  --#{$page}__main-section--PaddingRight: var(--#{$pf-global}--spacer--md);
-  --#{$page}__main-section--PaddingBottom: var(--#{$pf-global}--spacer--md);
-  --#{$page}__main-section--PaddingLeft: var(--#{$pf-global}--spacer--md);
+  --#{$page}__main-section--PaddingTop: var(-—pf--global—-spacer—-md);
+  --#{$page}__main-section--PaddingRight: var(-—pf--global—-spacer—-md);
+  --#{$page}__main-section--PaddingBottom: var(-—pf--global—-spacer—-md);
+  --#{$page}__main-section--PaddingLeft: var(-—pf--global—-spacer—-md);
   --#{$page}__main-section--xl--PaddingTop: var(--#{$pf-global}--spacer--lg);
   --#{$page}__main-section--xl--PaddingRight: var(--#{$pf-global}--spacer--lg);
   --#{$page}__main-section--xl--PaddingBottom: var(--#{$pf-global}--spacer--lg);
   --#{$page}__main-section--xl--PaddingLeft: var(--#{$pf-global}--spacer--lg);
-  --#{$page}__main-breadcrumb--main-section--PaddingTop: var(--#{$pf-global}--spacer--md);
+  --#{$page}__main-breadcrumb--main-section--PaddingTop: var(-—pf--global—-spacer—-md);
   --#{$page}__main-section--BackgroundColor: var(--#{$pf-global}--BackgroundColor--light-300);
   --#{$page}__main-section--m-light--BackgroundColor: var(--#{$pf-global}--BackgroundColor--light-100);
   --#{$page}__main-section--m-light-100--BackgroundColor: var(--#{$pf-global}--BackgroundColor--150);
@@ -169,11 +167,11 @@ $pf-page-v5--height-breakpoint-map: build-breakpoint-map("base", "sm", "md", "lg
 
 
   // Main section breadcrumb
-  --#{$page}__main-breadcrumb--BackgroundColor: var(--#{$pf-global}--BackgroundColor--light-100);
-  --#{$page}__main-breadcrumb--PaddingTop: var(--#{$pf-global}--spacer--md);
-  --#{$page}__main-breadcrumb--PaddingRight: var(--#{$pf-global}--spacer--md);
+  --#{$page}__main-breadcrumb--BackgroundColor: var(—-pf--global—-background—-color-—primary);
+  --#{$page}__main-breadcrumb--PaddingTop: var(--pf-global--spacer--md);
+  --#{$page}__main-breadcrumb--PaddingRight: var(--pf-global--spacer--md);
   --#{$page}__main-breadcrumb--PaddingBottom: 0;
-  --#{$page}__main-breadcrumb--PaddingLeft: var(--#{$pf-global}--spacer--md);
+  --#{$page}__main-breadcrumb--PaddingLeft: var(--pf--global--spacer--md);
   --#{$page}__main-breadcrumb--m-sticky-top--PaddingBottom: var(--#{$pf-global}--spacer--md);
   --#{$page}__main-breadcrumb--xl--PaddingRight: var(--#{$pf-global}--spacer--lg);
   --#{$page}__main-breadcrumb--xl--PaddingLeft: var(--#{$pf-global}--spacer--lg);
@@ -183,7 +181,7 @@ $pf-page-v5--height-breakpoint-map: build-breakpoint-map("base", "sm", "md", "lg
   --#{$page}__main-tabs--PaddingRight: 0;
   --#{$page}__main-tabs--PaddingBottom: 0;
   --#{$page}__main-tabs--PaddingLeft: 0;
-  --#{$page}__main-tabs--BackgroundColor: var(--#{$pf-global}--BackgroundColor--light-100);
+  --#{$page}__main-tabs--BackgroundColor: var(—-pf--global—-background—-color-—primary);
 
   @media screen and (min-width: $pf-v5-global--breakpoint--xl) {
     --#{$page}__main-breadcrumb--PaddingRight: var(--#{$page}__main-breadcrumb--xl--PaddingRight);
@@ -357,7 +355,6 @@ $pf-page-v5--height-breakpoint-map: build-breakpoint-map("base", "sm", "md", "lg
         content: "";
       }
 
-      // stylelint-disable
       .#{$notification-badge} {
         &.pf-m-unread {
           --#{$notification-badge}--after--BackgroundColor: var(--#{$page}__header-tools--c-button--m-selected--notification-badge--m-unread--after--BackgroundColor);
@@ -371,7 +368,6 @@ $pf-page-v5--height-breakpoint-map: build-breakpoint-map("base", "sm", "md", "lg
           --#{$notification-badge}--after--BackgroundColor: var(--#{$pf-global}--danger-color--200);
         }
       }
-      // stylelint-enable
     }
   }
 
@@ -689,7 +685,6 @@ $pf-page-v5--height-breakpoint-map: build-breakpoint-map("base", "sm", "md", "lg
     $breakpoint-name: if($breakpoint != "base", -on-#{$breakpoint}, "");
 
     @include pf-v5-apply-breakpoint($breakpoint) {
-      // stylelint-disable max-nesting-depth
       &.pf-m-padding#{$breakpoint-name} {
         padding: var(--#{$page}__main-section--PaddingTop) var(--#{$page}__main-section--PaddingRight) var(--#{$page}__main-section--PaddingBottom) var(--#{$page}__main-section--PaddingLeft);
 
@@ -708,7 +703,6 @@ $pf-page-v5--height-breakpoint-map: build-breakpoint-map("base", "sm", "md", "lg
           padding: 0;
         }
       }
-      // stylelint-enable
     }
   }
 }
@@ -764,7 +758,6 @@ $pf-page-v5--height-breakpoint-map: build-breakpoint-map("base", "sm", "md", "lg
   }
 }
 
-// stylelint-disable no-invalid-position-at-import-rule
 @import "themes/dark/page";
 
 @include pf-v5-theme-dark {
