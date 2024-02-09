@@ -5,6 +5,7 @@
 
   // Menu
   --#{$menu}--BackgroundColor: var(--pf-t--global--background--color--floating--default);
+  --#{$menu}--BorderRadius: var(--pf-t--global--border--radius--small);
   --#{$menu}--BoxShadow: var(--pf-t--global--box-shadow--lg--bottom);
   --#{$menu}--MinWidth: auto;
   --#{$menu}--Width: auto;
@@ -226,8 +227,7 @@
   width: var(--#{$menu}--Width);
   min-width: var(--#{$menu}--MinWidth);
   background-color: var(--#{$menu}--BackgroundColor);
-  border-end-start-radius: 8px;
-  border-end-end-radius: 8px; // TODO
+  border-radius: var(--#{$menu}--BorderRadius);
   box-shadow: var(--#{$menu}--BoxShadow);
 
   .#{$menu}__content {
