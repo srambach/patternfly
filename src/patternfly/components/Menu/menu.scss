@@ -1,6 +1,7 @@
 // @debug $menu; // check your variable names located in src/patternfly/sass-utilities/component-namespaces.scss
 
-.#{$menu} {
+:where(:root),
+:where(.#{$menu}) {
   @include pf-v5-t-light;
 
   // Menu
@@ -221,7 +222,9 @@
   --#{$menu}--m-nav--c-menu--m-left--Right: calc(100% - var(--#{$menu}--m-nav--c-menu--m-left--right-offset));
   --#{$menu}--m-nav--c-menu--m-top--Bottom: calc(0 + var(--#{$menu}--m-nav--c-menu--m-top--bottom-offset));
   --#{$menu}--m-nav__list-item--first-child--c-menu--Top: 0;
+}
 
+:where(.#{$menu}) {
   inset-block-start: var(--#{$menu}--Top);
   z-index: var(--#{$menu}--ZIndex);
   width: var(--#{$menu}--Width);
@@ -778,11 +781,4 @@
     content: "";
     border-block-start: var(--#{$menu}__footer--after--BorderTopWidth) solid var(--#{$menu}__footer--after--BorderTopColor);
   }
-}
-
-// stylelint-disable no-invalid-position-at-import-rule
-@import "themes/dark/menu";
-
-@include pf-v5-theme-dark {
-  @include pf-v5-theme-dark-menu;
 }
