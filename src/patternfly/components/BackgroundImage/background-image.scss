@@ -1,7 +1,7 @@
 @use '../../sass-utilities' as *;
 
-:root,
-.#{$background-image} {
+:where(:root),
+:where(.#{$background-image}) {
   --#{$background-image}--BackgroundColor: var(--pf-t--global--background--color--primary--default);
   --#{$background-image}--BackgroundImage: none;
   --#{$background-image}--BackgroundSize--min-width: 200px;

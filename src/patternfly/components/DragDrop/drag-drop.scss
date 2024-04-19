@@ -1,6 +1,7 @@
 @use '../../sass-utilities' as *;
 
-:where(:root), :where(.#{$draggable}) {
+:where(:root),
+:where(.#{$draggable}) {
   --#{$draggable}--Cursor: auto;
   --#{$draggable}--m-dragging--Cursor: grabbing;
   --#{$draggable}--m-dragging--BoxShadow: var(--pf-t--global--box-shadow--md);
@@ -40,7 +41,8 @@
   }
 }
 
-:where(:root), :where(.#{$droppable}) {
+:where(:root),
+:where(.#{$droppable}) {
   --#{$droppable}--before--BackgroundColor: transparent;
   --#{$droppable}--before--Opacity: 0;
   --#{$droppable}--after--BorderWidth: 0;

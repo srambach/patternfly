@@ -1,6 +1,7 @@
 @use '../../sass-utilities' as *;
 
-:root {
+:where(:root),
+:where(.#{$accordion}) {
   // accordion
   --#{$accordion}--BackgroundColor: var(--pf-t--global--background--color--primary--default);
   --#{$accordion}--RowGap: var(--pf-t--global--spacer--xs);

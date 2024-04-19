@@ -1,6 +1,7 @@
 @use '../../sass-utilities' as *;
 
-:root {
+:where(:root),
+:where(.#{$tooltip}) {
   // Component variables
   --#{$tooltip}--MaxWidth: #{pf-size-prem(300px)};
   --#{$tooltip}--BoxShadow: var(--pf-t--global--box-shadow--md);

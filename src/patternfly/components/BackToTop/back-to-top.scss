@@ -1,6 +1,7 @@
 @use '../../sass-utilities' as *;
 
-:root {
+:where(:root),
+:where(.#{$back-to-top}) {
   --#{$back-to-top}--Right: var(--pf-t--global--spacer--2xl);
   --#{$back-to-top}--Bottom: var(--pf-t--global--spacer--lg);
   --#{$back-to-top}--md--Bottom: var(--pf-t--global--spacer--2xl);

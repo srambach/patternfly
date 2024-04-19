@@ -1,7 +1,7 @@
 @use '../../sass-utilities' as *;
 
-:root,
-.#{$spinner} {
+:where(:root),
+:where(.#{$spinner}) {
   --#{$spinner}--diameter: var(--pf-t--global--icon--size--2xl);
   --#{$spinner}--Width: var(--#{$spinner}--diameter);
   --#{$spinner}--Height: var(--#{$spinner}--diameter);

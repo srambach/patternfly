@@ -1,7 +1,7 @@
 @use '../../sass-utilities' as *;
 
-:root,
-.#{$tab-content} {
+:where(:root),
+:where(.#{$tab-content}) {
   --#{$tab-content}__body--PaddingTop: 0;
   --#{$tab-content}__body--PaddingRight: 0;
   --#{$tab-content}__body--PaddingBottom: 0;
