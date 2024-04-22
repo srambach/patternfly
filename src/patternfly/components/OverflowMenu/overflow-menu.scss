@@ -1,7 +1,6 @@
 @use '../../sass-utilities' as *;
 
-:where(:root),
-:where(.#{$overflow-menu}) {
+:where(:root, .#{$overflow-menu}) {
   --#{$overflow-menu}--ColumnGap: var(--pf-t--global--spacer--md);
 
   // * Overflow menu group

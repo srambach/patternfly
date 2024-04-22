@@ -1,7 +1,6 @@
 @use '../../sass-utilities' as *;
 
-:where(:root),
-:where(.#{$panel}) {
+:where(:root, .#{$panel}) {
   --#{$panel}--Width: auto;
   --#{$panel}--MinWidth: auto;
   --#{$panel}--MaxWidth: none;

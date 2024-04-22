@@ -1,7 +1,6 @@
 @use '../../sass-utilities' as *;
 
-:where(:root),
-:where(.#{$notification-badge}) {
+:where(:root, .#{$notification-badge}) {
   --#{$notification-badge}--BackgroundColor: transparent;
   --#{$notification-badge}--MinWidth: 40px;
   --#{$notification-badge}--Gap: var(--pf-t--global--spacer--xs);

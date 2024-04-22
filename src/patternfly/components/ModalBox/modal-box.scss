@@ -1,7 +1,6 @@
 @use '../../sass-utilities' as *;
 
-:where(:root),
-:where(.#{$modal-box}) {
+:where(:root, .#{$modal-box}) {
   --#{$modal-box}--BackgroundColor: var(--pf-t--global--background--color--floating--default);
   --#{$modal-box}--BorderRadius: var(--pf-t--global--border--radius--large);
   --#{$modal-box}--BoxShadow: var(--pf-t--global--box-shadow--lg);
